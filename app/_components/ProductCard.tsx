@@ -32,6 +32,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   expected_monthly_bill_amount,
   view_discount,
 }) => {
+    const sanitizedHTML = DOMPurify.sanitize(view_discount || "");
+
   return (
     <div className="rounded-lg shadow-md min-w-[900px] max-w-[900px] overflow-hidden bg-white pb-6">
       {view_discount !== null && (
