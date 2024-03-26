@@ -9,6 +9,7 @@ import {
   IoArrowUpCircleOutline,
   IoInformationCircleOutline,
 } from "react-icons/io5";
+import DOMPurify from "dompurify";
 
 interface ProductCardProps {
   logo?: string;
@@ -44,12 +45,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <FaRegLightbulb size={12} />
             <span className="text-[10px]">Electricity</span>
           </div>
-          <p className="flex items-center gap-1 text-[10px] text-white">
-            <span>
-              <FaCircleCheck size={12} color="#00A7E7" />
-            </span>
-            {view_discount?.replace(/^<p>|<\/p>$/g, "")}
-          </p>
+          <div className="flex items-center gap-1 ">
+            <FaCircleCheck size={12} color="#00A7E7" />
+            <p
+              dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+              className="flex items-center gap-1 text-[10px] text-white"
+            ></p>
+          </div>
         </div>
       )}
       <div className="p-6 flex gap-4">
