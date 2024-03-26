@@ -49,10 +49,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           <div className="flex items-center gap-1 ">
             <FaCircleCheck size={12} color="#00A7E7" />
-            <p
+            <span
               dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
               className="flex items-center gap-1 text-[10px] text-white"
-            ></p>
+            ></span>
           </div>
         </div>
       )}
